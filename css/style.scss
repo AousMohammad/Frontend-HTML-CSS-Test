@@ -81,9 +81,28 @@ header {
     h2 {
       font-size: 4rem;
       font-weight: bold;
+      @media (max-width: 768px) {
+        font-size: 2rem;
+      }
     }
     p {
       color: gray;
+    }
+    @media (max-width: 768px) {
+      .appsIcon {
+        justify-content: center;
+      }
+      .img-fluid {
+        height: 100%;
+      }
+    }
+  }
+  @media (max-width: 767px) { 
+    .navbar, .navbar-collapse {
+      background-color: white;
+      img {
+        width: 35vw;
+      }
     }
   }
 }
@@ -215,16 +234,57 @@ main {
     border: 1px solid black;
     border-radius: 25px;
     h6 {
-        font-size: 3rem;
-        span {
-            font-weight: normal;
-            font-size: 1.5rem;
-        }
+      font-size: 3rem;
+      span {
+        font-weight: normal;
+        font-size: 1.5rem;
+      }
     }
     li {
-        font-size: 1.7rem;
-        margin-bottom: 4%;
-        font-weight: 600;
+      font-size: 1.7rem;
+      margin-bottom: 4%;
+      font-weight: 600;
+    }
+  }
+  @media (max-width: 768px) {
+    padding: 2vh 0;
+    h2 {
+      font-size: 2rem;
+    }
+    h3 {
+      font-size: 1.5rem;
+    }
+    .large_card {
+      padding: 10%;
+      h5 {
+        font-size: 1.5rem;
+      }
+      img {
+        width: 100%;
+      }
+    }
+    .card {
+      margin-top: 15%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+    .img-fluid {
+      height: 100% !important;
+    }
+    .howWork {
+      h3 {
+        margin: 5% auto;
+        font-size: 1.5rem;
+        width: 100%;
+      }
+      p {
+        width: 100%;
+      }
+      img {
+        height: auto !important;
+        object-fit: contain;
+        width: 100%;
+      }
     }
   }
 }
@@ -233,7 +293,7 @@ footer {
   .logo {
     filter: grayscale(1);
   }
-  
+
   .nav {
     li {
       margin-inline-end: 5%;
@@ -241,7 +301,7 @@ footer {
         color: black;
         padding: 0;
         &:hover {
-            color: $pink;
+          color: $pink;
         }
       }
     }
@@ -250,11 +310,24 @@ footer {
   .cpyrht {
     font-size: 12px;
   }
+  @media (max-width: 768px) {
+    .w-50 {
+      width: 100% !important;
+    }
+    .col-md-2 {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin-bottom: 5%;
+    }
+    .mt-2 {
+      margin-top: 0 !important;
+    }
+  }
 }
 
-
 .coloredText {
-    background: -webkit-linear-gradient(0deg, $pink, $orange);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
+  background: -webkit-linear-gradient(0deg, $pink, $orange);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

@@ -81,8 +81,29 @@ header #banner h2 {
   font-size: 4rem;
   font-weight: bold;
 }
+@media (max-width: 768px) {
+  header #banner h2 {
+    font-size: 2rem;
+  }
+}
 header #banner p {
   color: gray;
+}
+@media (max-width: 768px) {
+  header #banner .appsIcon {
+    justify-content: center;
+  }
+  header #banner .img-fluid {
+    height: 100%;
+  }
+}
+@media (max-width: 767px) {
+  header .navbar, header .navbar-collapse {
+    background-color: white;
+  }
+  header .navbar img, header .navbar-collapse img {
+    width: 35vw;
+  }
 }
 
 main h2 {
@@ -215,6 +236,48 @@ main .priceCard li {
   margin-bottom: 4%;
   font-weight: 600;
 }
+@media (max-width: 768px) {
+  main {
+    padding: 2vh 0;
+  }
+  main h2 {
+    font-size: 2rem;
+  }
+  main h3 {
+    font-size: 1.5rem;
+  }
+  main .large_card {
+    padding: 10%;
+  }
+  main .large_card h5 {
+    font-size: 1.5rem;
+  }
+  main .large_card img {
+    width: 100%;
+  }
+  main .card {
+    margin-top: 15%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  main .img-fluid {
+    height: 100% !important;
+  }
+  main .howWork h3 {
+    margin: 5% auto;
+    font-size: 1.5rem;
+    width: 100%;
+  }
+  main .howWork p {
+    width: 100%;
+  }
+  main .howWork img {
+    height: auto !important;
+    -o-object-fit: contain;
+       object-fit: contain;
+    width: 100%;
+  }
+}
 
 footer .logo {
   filter: grayscale(1);
@@ -232,6 +295,20 @@ footer .nav li a:hover {
 }
 footer .cpyrht {
   font-size: 12px;
+}
+@media (max-width: 768px) {
+  footer .w-50 {
+    width: 100% !important;
+  }
+  footer .col-md-2 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 5%;
+  }
+  footer .mt-2 {
+    margin-top: 0 !important;
+  }
 }
 
 .coloredText {
