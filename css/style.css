@@ -29,24 +29,67 @@ h6 {
 .btn-main {
   background-color: #8a1e86;
   color: white;
-  border-radius: 15px;
+  border: 1px solid white !important;
 }
 .btn-main:hover {
   background-color: white;
   color: #8a1e86;
-  border-color: #8a1e86;
+  border: 1px solid #8a1e86 !important;
+}
+
+.btn-outlined-main {
+  border: 1px solid #8a1e86 !important;
+  background-color: transparent;
+  color: #8a1e86;
+}
+.btn-outlined-main:hover {
+  background-color: #8a1e86;
+  color: white;
+  border: 1px solid white;
+}
+
+.gradBG, .offcanvas.offcanvas-end .offcanvas-header-custom .carousel .carousel-control-next:hover .carousel-control-prev-icon,
+.offcanvas.offcanvas-end .offcanvas-header-custom .carousel .carousel-control-next:hover .carousel-control-next-icon,
+.offcanvas.offcanvas-end .offcanvas-header-custom .carousel .carousel-control-prev:hover .carousel-control-prev-icon,
+.offcanvas.offcanvas-end .offcanvas-header-custom .carousel .carousel-control-prev:hover .carousel-control-next-icon, .btn-grad, .btn-outlined-grad:hover, .btn-outlined-grad.active {
+  background: -webkit-linear-gradient(0deg, #fcb43a, #8a1e86);
+}
+
+.btn {
+  border: 0;
+}
+.btn:hover {
+  border: 0;
+}
+
+.btn-outlined-grad {
+  background: white;
+  color: #8a1e86;
+  border-radius: 15px;
+  border: 1px solid #8a1e86;
+}
+.btn-outlined-grad:hover, .btn-outlined-grad.active {
+  border-color: transparent;
+  color: white;
 }
 
 .btn-grad {
-  background: -webkit-linear-gradient(0deg, #fcb43a, #8a1e86);
   border-radius: 25px;
   color: white;
   padding: 1% 5%;
   border: 0;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 .container-fluid {
   padding: 1vh 5vw;
+}
+
+hr {
+  opacity: 1;
 }
 
 header {
@@ -61,9 +104,6 @@ header .navbar-nav {
 }
 header .navbar-nav .nav-item {
   margin: auto 1vw;
-}
-header hr {
-  opacity: 1;
 }
 header nav {
   height: 10vh;
@@ -81,6 +121,11 @@ header #banner h2 {
   font-size: 4rem;
   font-weight: bold;
 }
+@media (max-width: 1100px) {
+  header #banner h2 {
+    font-size: 3rem;
+  }
+}
 @media (max-width: 768px) {
   header #banner h2 {
     font-size: 2rem;
@@ -89,19 +134,67 @@ header #banner h2 {
 header #banner p {
   color: gray;
 }
+header #banner form {
+  width: 30%;
+  margin: 5% auto;
+}
 @media (max-width: 768px) {
+  header #banner form {
+    width: 70%;
+  }
+  header #banner form .input-group {
+    flex-direction: column;
+  }
+  header #banner form .input-group input {
+    width: 100%;
+    border: 1px solid black;
+    margin-bottom: 10px;
+  }
+  header #banner form .input-group span {
+    display: flex;
+    justify-content: center;
+  }
+}
+header #banner form .input-group-text {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-radius: 5px;
+  background-color: #8a1e86;
+}
+header #banner form .input-group-text button {
+  background: transparent;
+  border: 0;
+  color: white;
+}
+header #banner form .input-group-text:hover {
+  background-color: white;
+}
+header #banner form .input-group-text:hover button {
+  color: #8a1e86;
+}
+@media (max-width: 768px) {
+  header #banner {
+    height: auto;
+  }
   header #banner .appsIcon {
     justify-content: center;
   }
   header #banner .img-fluid {
     height: 100%;
+    -o-object-fit: contain;
+       object-fit: contain;
   }
 }
-@media (max-width: 767px) {
-  header .navbar, header .navbar-collapse {
+@media (max-width: 768px) {
+  header {
+    height: auto;
+  }
+  header .navbar,
+  header .navbar-collapse {
     background-color: white;
   }
-  header .navbar img, header .navbar-collapse img {
+  header .navbar img,
+  header .navbar-collapse img {
     width: 35vw;
   }
 }
@@ -109,8 +202,28 @@ header #banner p {
 main h2 {
   font-size: 4rem;
 }
+@media (max-width: 1100px) {
+  main h2 {
+    font-size: 3rem;
+  }
+}
+@media (max-width: 768px) {
+  main h2 {
+    font-size: 2rem;
+  }
+}
 main h3 {
   font-size: 3rem;
+}
+@media (max-width: 1100px) {
+  main h3 {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 768px) {
+  main h3 {
+    font-size: 1.5rem;
+  }
 }
 main .card {
   border: 0;
@@ -129,6 +242,18 @@ main .card p {
 main .howWork h3 {
   margin: 2% auto;
   width: 35%;
+}
+@media (max-width: 768px) {
+  main .howWork h3 {
+    margin: 5% auto;
+    font-size: 1.5rem;
+    width: 100%;
+  }
+}
+@media (max-width: 1100px) {
+  main .howWork h3 {
+    width: 65%;
+  }
 }
 main .howWork p {
   width: 50%;
@@ -237,6 +362,54 @@ main .priceCard li {
   font-weight: 600;
 }
 @media (max-width: 768px) {
+  main .priceCard li {
+    font-size: 1.2rem;
+  }
+}
+main .filterTabs button {
+  margin-top: 10px;
+  -webkit-margin-end: 10px;
+          margin-inline-end: 10px;
+}
+@media (max-width: 768px) {
+  main .filterTabs {
+    overflow-x: scroll;
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+  }
+  main .filterTabs button {
+    white-space: nowrap;
+  }
+}
+main .filterCard img {
+  border-radius: 20px;
+}
+main .filterCard .btn {
+  border: 1px solid transparent;
+}
+main .filterCard .btn:hover {
+  border: 1px solid #8a1e86;
+}
+main .filterCard .outlined {
+  width: -moz-max-content;
+  width: max-content;
+  padding: 10px 5%;
+  color: black;
+  border-radius: 16px;
+  border: 1px solid black;
+}
+@media (max-width: 1400px) {
+  main .large_card {
+    min-height: auto;
+    padding: 3%;
+  }
+}
+@media (max-width: 1400px) and (max-width: 1100px) {
+  main .large_card h5 {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 768px) {
   main {
     padding: 2vh 0;
   }
@@ -262,11 +435,6 @@ main .priceCard li {
   }
   main .img-fluid {
     height: 100% !important;
-  }
-  main .howWork h3 {
-    margin: 5% auto;
-    font-size: 1.5rem;
-    width: 100%;
   }
   main .howWork p {
     width: 100%;
@@ -296,18 +464,32 @@ footer .nav li a:hover {
 footer .cpyrht {
   font-size: 12px;
 }
+@media (max-width: 1000px) {
+  footer .col-md-2 {
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  footer .col-md-2 img {
+    width: 100%;
+  }
+}
 @media (max-width: 768px) {
   footer .w-50 {
     width: 100% !important;
   }
   footer .col-md-2 {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     margin-bottom: 5%;
   }
   footer .mt-2 {
     margin-top: 0 !important;
+  }
+}
+@media (max-width: 450px) {
+  footer .col-md-2 {
+    flex-direction: row;
   }
 }
 
@@ -316,4 +498,121 @@ footer .cpyrht {
   -webkit-background-clip: text;
           background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.offcanvas.offcanvas-end {
+  width: 50vw;
+  padding: 0;
+}
+@media (max-width: 768px) {
+  .offcanvas.offcanvas-end {
+    width: 70vw;
+  }
+}
+@media (max-width: 450px) {
+  .offcanvas.offcanvas-end {
+    width: 100vw;
+  }
+}
+.offcanvas.offcanvas-end .offcanvas-header-custom {
+  position: relative;
+  height: 40vh;
+  overflow: hidden;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+.offcanvas.offcanvas-end .offcanvas-header-custom .carousel {
+  height: 100%;
+}
+.offcanvas.offcanvas-end .offcanvas-header-custom .carousel-inner {
+  height: 100%;
+}
+.offcanvas.offcanvas-end .offcanvas-header-custom .carousel-item {
+  height: 100%;
+}
+.offcanvas.offcanvas-end .offcanvas-header-custom .carousel-item img {
+  height: 100%;
+}
+.offcanvas.offcanvas-end .offcanvas-header-custom .carousel .carousel-control-next .carousel-control-prev-icon,
+.offcanvas.offcanvas-end .offcanvas-header-custom .carousel .carousel-control-next .carousel-control-next-icon,
+.offcanvas.offcanvas-end .offcanvas-header-custom .carousel .carousel-control-prev .carousel-control-prev-icon,
+.offcanvas.offcanvas-end .offcanvas-header-custom .carousel .carousel-control-prev .carousel-control-next-icon {
+  background-image: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: white;
+}
+.offcanvas.offcanvas-end .offcanvas-header-custom .carousel .carousel-control-next .carousel-control-prev-icon svg,
+.offcanvas.offcanvas-end .offcanvas-header-custom .carousel .carousel-control-next .carousel-control-next-icon svg,
+.offcanvas.offcanvas-end .offcanvas-header-custom .carousel .carousel-control-prev .carousel-control-prev-icon svg,
+.offcanvas.offcanvas-end .offcanvas-header-custom .carousel .carousel-control-prev .carousel-control-next-icon svg {
+  fill: black;
+  width: 20px;
+  height: 20px;
+}
+.offcanvas.offcanvas-end .offcanvas-header-custom .carousel .carousel-control-next:hover .carousel-control-prev-icon svg,
+.offcanvas.offcanvas-end .offcanvas-header-custom .carousel .carousel-control-next:hover .carousel-control-next-icon svg,
+.offcanvas.offcanvas-end .offcanvas-header-custom .carousel .carousel-control-prev:hover .carousel-control-prev-icon svg,
+.offcanvas.offcanvas-end .offcanvas-header-custom .carousel .carousel-control-prev:hover .carousel-control-next-icon svg {
+  fill: white;
+}
+.offcanvas.offcanvas-end .offcanvas-header-custom .btn-close {
+  position: absolute;
+  right: 5%;
+  top: 5%;
+  background-color: white;
+  color: black;
+  padding: 2%;
+  opacity: 1;
+  z-index: 1001;
+}
+.offcanvas.offcanvas-end .offcanvas-body .container-fluid {
+  padding: 1vh 1vw;
+}
+.offcanvas.offcanvas-end .offcanvas-body .container-fluid .col-md-2 {
+  padding-left: 0;
+  padding-right: 0;
+}
+.offcanvas.offcanvas-end .offcanvas-body .container-fluid .col-md-2:hover {
+  cursor: pointer;
+}
+.offcanvas.offcanvas-end .offcanvas-body .container-fluid .tab.active {
+  -o-border-image: none;
+     border-image: none;
+  color: #8a1e86;
+}
+.offcanvas.offcanvas-end .offcanvas-body .container-fluid p {
+  color: gray;
+  font-size: 14px;
+}
+.offcanvas.offcanvas-end .offcanvas-body .container-fluid .voucher_card {
+  border-radius: 20px;
+  border: 1px solid black;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 5% 0;
+}
+.offcanvas.offcanvas-end .offcanvas-body .container-fluid .voucher_card .pink {
+  color: #8a1e86;
+}
+.offcanvas.offcanvas-end .offcanvas-footer {
+  box-shadow: 0px -2px 12px 1px rgba(0, 0, 0, 0.3215686275);
+  padding: 15px 0;
+  text-align: center;
+}
+.offcanvas.offcanvas-end .offcanvas-footer .btn-main {
+  width: 60%;
+}
+@media (max-width: 1024px) {
+  .offcanvas.offcanvas-end .description img {
+    width: 25px;
+  }
+  .offcanvas.offcanvas-end .description h6,
+  .offcanvas.offcanvas-end .description span {
+    font-size: 10px;
+  }
 }/*# sourceMappingURL=style.css.map */

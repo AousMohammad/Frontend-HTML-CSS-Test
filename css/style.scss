@@ -33,26 +33,63 @@ h6 {
 .btn-main {
   background-color: $pink;
   color: white;
-  border-radius: 15px;
+  border: 1px solid white !important;
   &:hover {
     background-color: white;
     color: $pink;
-    border-color: $pink;
+    border: 1px solid $pink !important;
+  }
+}
+
+.btn-outlined-main {
+  border: 1px solid $pink !important;
+  background-color: transparent;
+  color: $pink;
+  &:hover {
+    background-color: $pink;
+    color: white;
+    border: 1px solid white;
+  }
+}
+
+.gradBG {
+  background: -webkit-linear-gradient(0deg, $orange, $pink);
+}
+.btn {
+  border: 0;
+  &:hover {
+    border: 0;
+  }
+}
+.btn-outlined-grad {
+  background: white;
+  color: $pink;
+  border-radius: 15px;
+  border: 1px solid $pink;
+  &:hover,
+  &.active {
+    @extend .gradBG;
+    border-color: transparent;
+    color: white;
   }
 }
 
 .btn-grad {
-  background: -webkit-linear-gradient(0deg, $orange, $pink);
   border-radius: 25px;
   color: white;
   padding: 1% 5%;
   border: 0;
+  @extend .gradBG;
 }
-
+body {
+  overflow-x: hidden;
+}
 .container-fluid {
   padding: 1vh 5vw;
 }
-
+hr {
+  opacity: 1;
+}
 header {
   height: 100vh;
   .navbar-brand img {
@@ -64,9 +101,7 @@ header {
       margin: auto 1vw;
     }
   }
-  hr {
-    opacity: 1;
-  }
+
   nav {
     height: 10vh;
   }
@@ -81,6 +116,9 @@ header {
     h2 {
       font-size: 4rem;
       font-weight: bold;
+      @media (max-width: 1100px) {
+        font-size: 3rem;
+      }
       @media (max-width: 768px) {
         font-size: 2rem;
       }
@@ -88,17 +126,57 @@ header {
     p {
       color: gray;
     }
+    form {
+      width: 30%;
+      margin: 5% auto;
+      @media (max-width: 768px) {
+        width: 70%;
+        .input-group {
+          flex-direction: column;
+          input {
+            width: 100%;
+            border: 1px solid black;
+            margin-bottom: 10px;
+          }
+          span {
+            display: flex;
+            justify-content: center;
+          }
+        }
+      }
+      .input-group-text {
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        border-radius: 5px;
+        background-color: $pink;
+        button {
+          background: transparent;
+          border: 0;
+          color: white;
+        }
+        &:hover {
+          background-color: white;
+          button {
+            color: $pink;
+          }
+        }
+      }
+    }
     @media (max-width: 768px) {
+      height: auto;
       .appsIcon {
         justify-content: center;
       }
       .img-fluid {
         height: 100%;
+        object-fit: contain;
       }
     }
   }
-  @media (max-width: 767px) { 
-    .navbar, .navbar-collapse {
+  @media (max-width: 768px) {
+    height: auto;
+    .navbar,
+    .navbar-collapse {
       background-color: white;
       img {
         width: 35vw;
@@ -110,9 +188,21 @@ header {
 main {
   h2 {
     font-size: 4rem;
+    @media (max-width: 1100px) {
+      font-size: 3rem;
+    }
+    @media (max-width: 768px) {
+      font-size: 2rem;
+    }
   }
   h3 {
     font-size: 3rem;
+    @media (max-width: 1100px) {
+      font-size: 2rem;
+    }
+    @media (max-width: 768px) {
+      font-size: 1.5rem;
+    }
   }
   .card {
     border: 0;
@@ -132,6 +222,14 @@ main {
     h3 {
       margin: 2% auto;
       width: 35%;
+      @media (max-width: 768px) {
+        margin: 5% auto;
+        font-size: 1.5rem;
+        width: 100%;
+      }
+      @media (max-width: 1100px) {
+        width: 65%;
+      }
     }
     p {
       width: 50%;
@@ -244,6 +342,52 @@ main {
       font-size: 1.7rem;
       margin-bottom: 4%;
       font-weight: 600;
+      @media (max-width: 768px) {
+        font-size: 1.2rem;
+      }
+    }
+  }
+  .filterTabs {
+    button {
+      margin-top: 10px;
+      margin-inline-end: 10px;
+    }
+    @media (max-width: 768px) {
+      overflow-x: scroll;
+      flex-wrap: nowrap !important;
+      justify-content: flex-start !important;
+      button {
+        white-space: nowrap;
+      }
+    }
+  }
+  .filterCard {
+    img {
+      border-radius: 20px;
+    }
+    .btn {
+      border: 1px solid transparent;
+      &:hover {
+        border: 1px solid $pink;
+      }
+    }
+    .outlined {
+      width: max-content;
+      padding: 10px 5%;
+      color: black;
+      border-radius: 16px;
+      border: 1px solid black;
+    }
+  }
+  @media (max-width: 1400px) {
+    .large_card {
+      min-height: auto;
+      padding: 3%;
+      h5 {
+        @media (max-width: 1100px) {
+          font-size: 2rem;
+        }
+      }
     }
   }
   @media (max-width: 768px) {
@@ -272,11 +416,6 @@ main {
       height: 100% !important;
     }
     .howWork {
-      h3 {
-        margin: 5% auto;
-        font-size: 1.5rem;
-        width: 100%;
-      }
       p {
         width: 100%;
       }
@@ -310,18 +449,32 @@ footer {
   .cpyrht {
     font-size: 12px;
   }
+  @media (max-width: 1000px) {
+    .col-md-2 {
+      flex-direction: column;
+      justify-content: space-evenly;
+      img {
+        width: 100%;
+      }
+    }
+  }
   @media (max-width: 768px) {
     .w-50 {
       width: 100% !important;
     }
     .col-md-2 {
       display: flex;
-      justify-content: space-around;
+      justify-content: space-evenly;
       align-items: center;
       margin-bottom: 5%;
     }
     .mt-2 {
       margin-top: 0 !important;
+    }
+  }
+  @media (max-width: 450px) {
+    .col-md-2 {
+      flex-direction: row;
     }
   }
 }
@@ -330,4 +483,123 @@ footer {
   background: -webkit-linear-gradient(0deg, $pink, $orange);
   background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.offcanvas.offcanvas-end {
+  width: 50vw;
+  padding: 0;
+  @media (max-width: 768px) {
+    width: 70vw;
+  }
+  @media (max-width: 450px) {
+    width: 100vw;
+  }
+  .offcanvas-header-custom {
+    position: relative;
+    height: 40vh;
+    overflow: hidden;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    .carousel {
+      height: 100%;
+      &-inner {
+        height: 100%;
+      }
+      &-item {
+        img {
+          height: 100%;
+        }
+        height: 100%;
+      }
+      .carousel-control-next,
+      .carousel-control-prev {
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+          background-image: none;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 50px;
+          width: 50px;
+          border-radius: 50%;
+          background-color: white;
+          svg {
+            fill: black;
+            width: 20px;
+            height: 20px;
+          }
+        }
+        &:hover {
+          .carousel-control-prev-icon,
+          .carousel-control-next-icon {
+            @extend .gradBG;
+            svg {
+              fill: white;
+            }
+          }
+        }
+      }
+    }
+    .btn-close {
+      position: absolute;
+      right: 5%;
+      top: 5%;
+      background-color: white;
+      color: black;
+      padding: 2%;
+      opacity: 1;
+      z-index: 1001;
+    }
+  }
+  .offcanvas-body {
+    .container-fluid {
+      padding: 1vh 1vw;
+      .col-md-2 {
+        padding-left: 0;
+        padding-right: 0;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      .tab {
+        &.active {
+          border-image: none;
+          color: $pink;
+        }
+      }
+      p {
+        color: gray;
+        font-size: 14px;
+      }
+      .voucher_card {
+        border-radius: 20px;
+        border: 1px solid black;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 5% 0;
+        .pink {
+          color: $pink;
+        }
+      }
+    }
+  }
+  .offcanvas-footer {
+    box-shadow: 0px -2px 12px 1px #00000052;
+    padding: 15px 0;
+    text-align: center;
+    .btn-main {
+      width: 60%;
+    }
+  }
+  @media (max-width: 1024px) {
+    .description {
+      img {
+        width: 25px;
+      }
+      h6,
+      span {
+        font-size: 10px;
+      }
+    }
+  }
 }
